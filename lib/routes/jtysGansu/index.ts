@@ -47,13 +47,6 @@ async function handler(ctx) {
     const rootUrl = 'https://jtys.gansu.gov.cn';
     const pathSegments = [fSeg, sSeg, tSeg, lSeg].filter(Boolean);
     const currentUrl = `${rootUrl}/${pathSegments.join('/')}`;
-    // const fUrl = fSeg === '' ? '' : `/${fSeg}`;
-    // const sUrl = sSeg === '' ? '' : `/${sSeg}`;
-    // const tUrl = tSeg === '' ? '' : `/${tSeg}`;
-    // const lUrl = lSeg === '' ? '' : `/${lSeg}`;
-
-    // const currentUrl = `${rootUrl}${fUrl}${sUrl}${tUrl}${lUrl}`;
-    // const currentUrl='https://jtys.gansu.gov.cn/jtys/c106454/xxgk_list.shtml'
     const browser = await puppeteer();
     const page = await browser.newPage();
     await page.setRequestInterception(true);
